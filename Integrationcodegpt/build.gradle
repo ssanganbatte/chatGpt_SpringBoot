@@ -1,0 +1,31 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.5'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.chatgpt'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-integration'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '3.0.5'
+	implementation group: 'org.springframework', name: 'spring-web', version: '6.0.7'
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.2'
+	implementation group: 'org.springframework.data', name: 'spring-data-redis', version: '3.0.4'
+	implementation group: 'org.springframework.data', name: 'spring-data-mongodb'
+	implementation group: 'org.mongodb', name: 'mongo-java-driver'
+	implementation group: 'org.mongodb', name: 'mongodb-driver-sync'
+	implementation group: 'io.lettuce', name: 'lettuce-core', version: '6.2.3.RELEASE'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.integration:spring-integration-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
